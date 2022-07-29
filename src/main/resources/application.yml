@@ -1,0 +1,8 @@
+server:
+  port: 8888
+  servlet:
+    context-path: /test
+
+mock:
+  server:
+    url: http://localhost:8999/mock/get
