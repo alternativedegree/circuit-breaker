@@ -14,4 +14,5 @@ This project implements CircuitBreaker using [resilience4j](https://resilience4j
   `Internal Server Error` to `Fail fast. Try Again!`
   which indicates the CircuitBreaker is in OPEN state
 - As long as the mock server is down, CircuitBreaker should oscillate
-  between OPEN state(`Fail fast. Try Again!`) and HAlF-OPEN state(`Internal Server Error`) 
+  between OPEN state(with response body as `Fail fast. Try Again!`)
+  and HALF-OPEN state(with response body as `Internal Server Error`) 
