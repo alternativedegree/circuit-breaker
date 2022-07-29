@@ -1,6 +1,6 @@
-package com.helloworld;
+package com.alternativedegree.exception;
 
-public class ServiceRuntimeException extends  RuntimeException{
+public class ServiceRuntimeException extends RuntimeException {
     private final String message;
 
     public ServiceRuntimeException(Throwable throwable, String message) {

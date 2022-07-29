@@ -1,6 +1,6 @@
-package com.helloworld.circuitbreaker;
+package com.alternativedegree.circuitbreaker;
 
-import com.helloworld.ServiceRuntimeException;
+import com.alternativedegree.exception.ServiceRuntimeException;
 import io.github.resilience4j.circuitbreaker.CircuitBreaker;
 import io.github.resilience4j.circuitbreaker.CircuitBreakerConfig;
 import io.github.resilience4j.circuitbreaker.CircuitBreakerRegistry;

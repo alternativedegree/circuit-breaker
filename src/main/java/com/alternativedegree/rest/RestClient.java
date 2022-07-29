@@ -1,6 +1,6 @@
-package com.helloworld.rest;
+package com.alternativedegree.rest;
 
-import com.helloworld.ServiceRuntimeException;
+import com.alternativedegree.exception.ServiceRuntimeException;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.http.HttpEntity;
 import org.springframework.http.HttpHeaders;
