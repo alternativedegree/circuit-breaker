@@ -2,12 +2,15 @@ package com.alternativedegree.rest;
 
 import com.alternativedegree.exception.ServiceRuntimeException;
 import org.springframework.beans.factory.annotation.Value;
+import org.springframework.boot.web.client.RestTemplateBuilder;
 import org.springframework.http.HttpEntity;
 import org.springframework.http.HttpHeaders;
 import org.springframework.http.HttpMethod;
 import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Component;
 import org.springframework.web.client.RestTemplate;
+
+import java.time.Duration;
 
 @Component
 public class RestClient {
@@ -18,7 +21,11 @@ public class RestClient {
     private final RestTemplate rest;
 
     public RestClient() {
-        this.rest = new RestTemplate();
+        RestTemplateBuilder restTemplateBuilder = new RestTemplateBuilder();
+        this.rest = restTemplateBuilder
+                .setConnectTimeout(Duration.ofSeconds(5))
+                .setReadTimeout(Duration.ofSeconds(5))
+                .build();
     }
 
     /**

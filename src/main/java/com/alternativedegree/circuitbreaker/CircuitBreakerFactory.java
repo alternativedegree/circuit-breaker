@@ -16,7 +16,7 @@ import java.time.Duration;
 public class CircuitBreakerFactory {
     private final CircuitBreaker circuitBreaker;
 
-    // If 50%(failureRateThreshold) of the 10(slidingWindowSize) requests fail(match the recordedExceptions) then the
+    // If 50%(failureRateThreshold) of the 5q(slidingWindowSize) requests fail(match the recordedExceptions) then the
     // circuit remains open for 5 seconds(waitDurationInOpenState).
     // In open state all the requests through the circuit breaker would fail with CallNotPermitted exception.
     // After 5 seconds, circuit goes into half-open state.
@@ -29,7 +29,7 @@ public class CircuitBreakerFactory {
                 .waitDurationInOpenState(Duration.ofMillis(5000))
                 .permittedNumberOfCallsInHalfOpenState(2)
                 .slidingWindowType(CircuitBreakerConfig.SlidingWindowType.COUNT_BASED)
-                .slidingWindowSize(10)
+                .slidingWindowSize(5)
                 .recordExceptions(ServiceRuntimeException.class) // All recorded exceptions are considered as a failure
                 .build();
 
